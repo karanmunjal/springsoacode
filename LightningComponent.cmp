@@ -1,0 +1,20 @@
+<aura:component controller="recentAccounts">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="accountlist" type="Account[]" />
+    
+    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+        <tr class="slds-text-heading_label">
+            <th scope="col"><div class="slds-truncate" title="ID">ID</div></th>
+            <th scope="col"><div class="slds-truncate" title="Name">Name</div></th>
+            <th scope="col"><div class="slds-truncate" title="Type">Type</div></th>
+        </tr>
+        <aura:iteration items="{!v.accountlist}" var="accs" >
+            <tr>  
+                <td> {!accs.Id}  </td>
+                <td> {!accs.Name}  </td>
+                <td> {!accs.Type}  </td>
+                
+            </tr> 
+        </aura:iteration>                                           
+    </table> 
+</aura:component>
